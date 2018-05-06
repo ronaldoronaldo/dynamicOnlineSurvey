@@ -10,6 +10,10 @@ Open the survey-app directory then run:
 
 $ ng serve --open
 
+if it doesnt open then you may need to run:
+
+$ npm install --save-dev @angular/cli@latest
+
 To run the tests run:
 
 $ ng test
