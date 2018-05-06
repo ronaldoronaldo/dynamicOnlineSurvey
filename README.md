@@ -4,15 +4,15 @@ if you dont have npm: https://nodejs.org/en/
 
 after install npm run: 
 
-  npm install -g @angular/cli
+$ npm install -g @angular/cli
 
 Open the survey-app directory then run:
 
-  ng serve --open
+$ ng serve --open
 
 To run the tests run:
 
-  ng test
+$ ng test
 
 .
 .
