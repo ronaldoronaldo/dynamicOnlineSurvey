@@ -1,0 +1,30 @@
+<div class="survey-body">
+
+  <div class="progress-bar-fill" [ngStyle]="{'width': (counter/questions.length)*100 + '%'}"> </div>
+  <div class="progress-bar-empty">
+    <span *ngIf="counter < questions.length">{{counter}} / {{questions.length}}</span>
+    <span *ngIf="counter === questions.length">Thanks!</span>
+  </div>
+
+
+  <div *ngIf="counter < questions.length">
+    <h2> Question: {{questions[counter].question}} </h2>
+    <label> answer :
+      <input class="answer-field" (keyup)="checkEnterPressed($event)" [(ngModel)]="questions[counter].answer" placeholder="write your answer here">
+    </label>
+  </div>
+
+  <div class="results" *ngIf="counter === questions.length">
+    <div class="result" *ngFor="let question of questions">
+      <h2 class="result-question">{{question.question}}</h2><h3 class="result-answer"> {{question.answer}}</h3>
+    </div>
+  </div>
+
+</div>
+
+<div class="survey-footer">
+  <button type="button" *ngIf="counter > 0" (click)="previousPage()">Previous</button>
+  <button type="button" *ngIf="counter < questions.length" (click)="nextPage()" [disabled]="questions[counter].answer === ''">Next</button>
+</div>
+
+

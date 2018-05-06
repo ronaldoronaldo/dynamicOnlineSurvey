@@ -1,0 +1,8 @@
+<div class="survey-panel">
+  <h1>First Meeting Survey</h1>
+  <h4 *ngIf="!start">Please fill the survey bellow, I promise it will only take a second</h4>
+  <router-outlet></router-outlet>
+  <a routerLink="/questions/0" class="start-link" (click)="started()" *ngIf="!start"> Start </a>
+</div>
+
+
